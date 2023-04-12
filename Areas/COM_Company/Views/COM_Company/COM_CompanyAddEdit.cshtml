@@ -1,5 +1,117 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Company Add/Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+@model MilkManagementSystem.Areas.COM_Company.Models.COM_CompanyModel
+
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <!-- BEGIN PAGE BAR -->
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span>Company Add/Edit Page</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END PAGE BAR -->
+        <!-- BEGIN PAGE TITLE-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase">Company Add/Edit</span>
+                </div>
+                @*<div class="actions">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+
+                <input  type="radio" name="options" class="toggle" id="option1">Country List
+                </label>
+
+                </div>
+                </div>*@
+            </div>
+
+
+            <div class="portlet-body form">
+                <h4 class="font-green-sharp">@TempData["EventCategoryInsertMsg"]</h4>
+                <form class="form-horizontal" role="form" method="post" asp-area="COM_Company" asp-controller="COM_Company" asp-action="Save">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @Html.HiddenFor(x=>x.CompanyID)
+                    @Html.HiddenFor(x=>x.UserID)
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Company Name</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Company Name" required asp-for="CompanyName" class="form-control" />
+                                <span asp-validation-for="CompanyName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Contact</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Contact Number" required asp-for="Contact" class="form-control" />
+                                <span asp-validation-for="Contact" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Email</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Email" required asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Address</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Address" required asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Pincode</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Pincode" required asp-for="Pincode" class="form-control" />
+                                <span asp-validation-for="Pincode" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <input type="submit" class="btn green" value="Save" />
+                                <a class="btn default" asp-area="COM_Company" asp-controller="COM_Company" asp-action="Index">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+    <!-- END CONTENT BODY -->
+</div>

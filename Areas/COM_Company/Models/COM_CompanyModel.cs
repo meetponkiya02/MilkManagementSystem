@@ -4,9 +4,9 @@ namespace MilkManagementSystem.Areas.COM_Company.Models
 {
     public class COM_CompanyModel 
     {
-        public int CompanyID { get; set; }  
+        public int? CompanyID { get; set; }  
 
-        public int UserID { get; set; } 
+        public int? UserID { get; set; } 
         public string CompanyName { get; set; } 
 
         public string Contact { get; set; }
