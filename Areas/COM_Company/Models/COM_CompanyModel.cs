@@ -21,4 +21,9 @@ namespace MilkManagementSystem.Areas.COM_Company.Models
 
         public DateTime ModificationDate { get; set; }  
     }
+    public class COM_CompanyDropDownmodel
+    {
+        public int? CompanyID { get; set; }
+        public string CompanyName { get; set; }
+    }
 }

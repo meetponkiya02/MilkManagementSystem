@@ -282,7 +282,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\SEC_User\Data\" />
+    <Folder Include="Areas\SLS_Sales\Controllers\" />
+    <Folder Include="Areas\SLS_Sales\Data\" />
+    <Folder Include="Areas\SLS_Sales\Models\" />
+    <Folder Include="Areas\SLS_Sales\Views\" />
   </ItemGroup>
 
 </Project>

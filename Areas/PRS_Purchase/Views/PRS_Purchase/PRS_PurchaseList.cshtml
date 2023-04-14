@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Company List";
+    ViewData["Title"] = "Purchase List";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -21,7 +21,7 @@
                     <i class="fa fa-circle"></i>
                 </li>
                 <li>
-                    <span>Company List</span>
+                    <span>Purchase List</span>
                 </li>
             </ul>
 
@@ -36,24 +36,24 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <i class="icon-settings font-dark"></i>
-                    <span class="caption-subject bold uppercase">Company List</span>
+                    <span class="caption-subject bold uppercase">Purchase List</span>
                 </div>
                 <div class="actions">
                     <div class="btn-group btn-group-devided">
-                        <a asp-area="COM_Company" asp-controller="COM_Company" asp-action="Add" class="btn green btn-rounded"><i class="fa fa-plus"></i>&nbsp;Add Company</a>
+                        <a asp-area="PRS_Purchase" asp-controller="PRS_Purchase" asp-action="Add" class="btn green btn-rounded"><i class="fa fa-plus"></i>&nbsp;Add Customer</a>
                     </div>
                 </div>
             </div>
             <div class="portlet-body">
                 <div class="pull-left">
-                  @*
+                    @*
                     <form method="post" asp-area="COM_Company" asp-controller="COM_Company" asp-action="Filter">
-                        <label>Filter: </label>&nbsp;
-                        <input type="search" name="CountryName" class="form-control input-sm input-small input-inline" placeholder="Country Name" value="" />
-                        <input type="search" name="CountryCode" class="form-control input-sm input-small input-inline" placeholder="Country Code" value="" />
-                        <button type="submit" class="btn btn-sm btn-success">GO</button>
+                    <label>Filter: </label>&nbsp;
+                    <input type="search" name="CountryName" class="form-control input-sm input-small input-inline" placeholder="Country Name" value="" />
+                    <input type="search" name="CountryCode" class="form-control input-sm input-small input-inline" placeholder="Country Code" value="" />
+                    <button type="submit" class="btn btn-sm btn-success">GO</button>
                     </form>
-                     <div id="sample_1_filter" class="dataTables_filter">
+                    <div id="sample_1_filter" class="dataTables_filter">
                     <label>Search Any&nbsp;<input type="text" class="form-control input-sm input-small input-inline" id="sample_1"></label>
                     </div>*@
                 </div>
@@ -62,33 +62,30 @@
                     <thead>
                         <tr class="">
                             <th>CompanyName</th>
-                            <th>Contact</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>PinCode</th>
-                            
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Date</th>
                             <th>Creation Date</th>
                             <th>Modification Date</th>
                             <th style="text-align:center">Action</th>
                         </tr>
                     </thead>
-                   <tbody id="sample_2">
+                    <tbody id="sample_2">
                         @foreach (DataRow dr in Model.Rows)
                         {
                             <tr>
                                 <td>@dr["CompanyName"]</td>
-                                <td>@dr["Contact"]</td>
-                                <td>@dr["Email"]</td>
-                                <td>@dr["Address"]</td>
-                                <td>@dr["Pincode"]</td>
+                                <td>@dr["Quantity"]</td>
+                                <td>@dr["Price"]</td>
+                                <td>@dr["Date"]</td>
                                 <td>@Convert.ToDateTime(dr["CreationDate"]).ToString("dd-MM-yyyy")</td>
                                 <td>@Convert.ToDateTime(dr["ModificationDate"]).ToString("dd-MM-yyyy")</td>
 
-                               <td class="text-center">
-                                    <form method="post" asp-area="COM_Company" asp-controller="COM_Company" asp-action="Delete">
-                                        <input type="hidden" name="CompanyID" value="@Convert.ToInt32(dr["CompanyID"])">
-                                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete : @dr["CompanyName"]');"><i class="fa fa-close"></i></button>
-                                        <a class="btn btn-info btn-xs" asp-area="COM_Company" asp-controller="COM_Company" asp-action="Add" asp-route-companyid="@Convert.ToInt32(dr["CompanyID"])"><i class="fa fa-pencil"></i></a>
+                                <td class="text-center">
+                                    <form method="post" asp-area="PRS_Purchase" asp-controller="PRS_Purchase" asp-action="Delete">
+                                        <input type="hidden" name="PurchaseID" value="@Convert.ToInt32(dr["PurchaseID"])">
+                                        <button type="submit" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure you want to delete : @dr["PurchaseID"]');"><i class="fa fa-close"></i></button>
+                                        <a class="btn btn-info btn-xs" asp-area="PRS_Purchase" asp-controller="PRS_Purchase" asp-action="Add" asp-route-purchaseid="@Convert.ToInt32(dr["PurchaseID"])"><i class="fa fa-pencil"></i></a>
                                     </form>
                                 </td>
                             </tr>

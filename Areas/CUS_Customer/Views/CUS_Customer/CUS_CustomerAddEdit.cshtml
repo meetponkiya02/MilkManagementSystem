@@ -1,0 +1,117 @@
+﻿@{
+    ViewData["Title"] = "Customer Add/Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model MilkManagementSystem.Areas.CUS_Customer.Models.CUS_CustomerModel
+
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <!-- BEGIN PAGE BAR -->
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span>Customer Add/Edit Page</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END PAGE BAR -->
+        <!-- BEGIN PAGE TITLE-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase">Company Add/Edit</span>
+                </div>
+                @*<div class="actions">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+
+                <input  type="radio" name="options" class="toggle" id="option1">Country List
+                </label>
+
+                </div>
+                </div>*@
+            </div>
+
+
+            <div class="portlet-body form">
+                <h4 class="font-green-sharp">@TempData["EventCategoryInsertMsg"]</h4>
+                <form class="form-horizontal" role="form" method="post" asp-area="CUS_Customer" asp-controller="CUS_Customer" asp-action="Save">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @Html.HiddenFor(x=>x.CustomerID)
+                    @Html.HiddenFor(x=>x.UserID)
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>CustomerName</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Customer Name" required asp-for="CustomerName" class="form-control" />
+                                <span asp-validation-for="CustomerName" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Mobile</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Contact Number" required asp-for="Mobile" class="form-control" />
+                                <span asp-validation-for="Mobile" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Email</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Email" required asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Address</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Address" required asp-for="Address" class="form-control" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Pincode</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Pincode" required asp-for="Pincode" class="form-control" />
+                                <span asp-validation-for="Pincode" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <input type="submit" class="btn green" value="Save" />
+                                <a class="btn default" asp-area="CUS_Customer" asp-controller="CUS_Customer" asp-action="Index">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+    <!-- END CONTENT BODY -->
+</div>
