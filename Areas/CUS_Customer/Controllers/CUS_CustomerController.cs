@@ -69,7 +69,7 @@ namespace MilkManagementSystem.Areas.CUS_Customer.Controllers
 
                 if (Convert.ToBoolean(dalCUS.dbo_PR_CUS_Customer_Insert(modelCUS_Customer)))
                 {
-                    TempData["CountryInsertMessage"] = "Record inserted successfully";
+                    TempData["CustomerInsert"] = "Record inserted successfully";
 
                 }
             }
@@ -78,7 +78,7 @@ namespace MilkManagementSystem.Areas.CUS_Customer.Controllers
                 if (Convert.ToBoolean(dalCUS.dbo_PR_CUS_Customer_UpdateByPK(modelCUS_Customer)))
                 {
 
-                    TempData["CountryUpdateMessage"] = "Record Update Successfully";
+                    TempData["CustomerUpdate"] = "Record Update Successfully";
 
                 }
                 return RedirectToAction("Index");

@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Areas\CON_Contact\**" />
+    <Compile Remove="Areas\SLS_Sales\Data\**" />
     <Content Remove="Areas\CON_Contact\**" />
+    <Content Remove="Areas\SLS_Sales\Data\**" />
     <EmbeddedResource Remove="Areas\CON_Contact\**" />
+    <EmbeddedResource Remove="Areas\SLS_Sales\Data\**" />
     <None Remove="Areas\CON_Contact\**" />
+    <None Remove="Areas\SLS_Sales\Data\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -283,7 +287,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\SLS_Sales\Controllers\" />
-    <Folder Include="Areas\SLS_Sales\Data\" />
     <Folder Include="Areas\SLS_Sales\Models\" />
     <Folder Include="Areas\SLS_Sales\Views\" />
   </ItemGroup>

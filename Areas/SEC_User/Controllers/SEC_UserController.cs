@@ -83,7 +83,7 @@ namespace MilkManagementSystem.Areas.SEC_User.Controllers
 
                 if (Convert.ToBoolean(dalSEC.dbo_PR_SEC_User_Insert(modelSEC_User)))
                 {
-                    TempData["CountryInsertMessage"] = "Record inserted successfully";
+                    TempData["UserInsert"] = "Record inserted successfully";
 
                 }
             }
@@ -92,7 +92,7 @@ namespace MilkManagementSystem.Areas.SEC_User.Controllers
                 if (Convert.ToBoolean(dalSEC.dbo_PR_SEC_User_UpdateByPK(modelSEC_User)))
                 {
 
-                    TempData["CountryUpdateMessage"] = "Record Update Successfully";
+                    TempData["UserUpdate"] = "Record Update Successfully";
 
                 }
                 return RedirectToAction("Index");

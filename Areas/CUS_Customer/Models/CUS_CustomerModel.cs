@@ -20,4 +20,9 @@
 
         public DateTime ModificationDate { get; set; }  
     }
+    public class CUS_CustomerDropDownmodel
+    {
+        public int? CustomerID { get; set; }
+        public string CustomerName { get; set; }
+    }
 }

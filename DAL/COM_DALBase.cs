@@ -9,7 +9,7 @@ namespace MilkManagementSystem.DAL
     public class COM_DALBase : DALHelper
     {
 
-        #region dbo.PR_COM_Company_SelectAll
+        #region COM_Company_SelectAll
         public DataTable dbo_COM_Company_SelectAll(int UserID)
         {
             try

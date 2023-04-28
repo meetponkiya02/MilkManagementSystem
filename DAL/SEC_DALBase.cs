@@ -7,7 +7,7 @@ namespace MilkManagementSystem.DAL
 {
     public class SEC_DALBase:DALHelper
     {
-        #region dbo.PR_SEC_User_SelectAll
+        #region SEC_User_SelectAll
         public DataTable dbo_PR_SEC_User_SelectAll()
         {
             try
@@ -32,7 +32,7 @@ namespace MilkManagementSystem.DAL
         }
         #endregion
 
-        #region dbo.PR_SEC_User_Delete
+        #region SEC_User_Delete
         public bool dbo_PR_SEC_User_DeleteByPK(int UserID)
         {
             try
@@ -52,7 +52,7 @@ namespace MilkManagementSystem.DAL
 
         #endregion
 
-        #region LOC_Country_SelectByPK
+        #region SEC_User_SelectByPK
 
         public DataTable dbo_PR_SEC_User_SelectByPK(int UserID)
         {
@@ -80,7 +80,7 @@ namespace MilkManagementSystem.DAL
 
         #endregion
 
-        #region LOC_Country_Insert
+        #region SEC_User_Insert
 
         public bool dbo_PR_SEC_User_Insert(SEC_UserModel modelSEC_User)
         {
@@ -107,7 +107,7 @@ namespace MilkManagementSystem.DAL
 
         #endregion
 
-        #region LOC_Country_Insert
+        #region SEC_User_Insert
 
         public bool dbo_PR_SEC_User_UpdateByPK(SEC_UserModel modelSEC_User)
         {

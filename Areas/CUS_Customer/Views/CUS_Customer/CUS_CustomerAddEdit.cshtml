@@ -29,7 +29,7 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <i class="icon-settings font-dark"></i>
-                    <span class="caption-subject bold uppercase">Company Add/Edit</span>
+                    <span class="caption-subject bold uppercase">Customer Add/Edit</span>
                 </div>
                 @*<div class="actions">
                 <div class="btn-group btn-group-devided" data-toggle="buttons">
@@ -44,7 +44,7 @@
 
 
             <div class="portlet-body form">
-                <h4 class="font-green-sharp">@TempData["EventCategoryInsertMsg"]</h4>
+                <h4 class="font-green-sharp">@TempData["CustomerInsert"]</h4>
                 <form class="form-horizontal" role="form" method="post" asp-area="CUS_Customer" asp-controller="CUS_Customer" asp-action="Save">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     @Html.HiddenFor(x=>x.CustomerID)

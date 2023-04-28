@@ -1,5 +1,113 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Sales Add/Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+@model MilkManagementSystem.Areas.SLS_Sales.Models.SLS_SalesModel
+
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <!-- BEGIN PAGE BAR -->
+        <div class="page-bar">
+            <ul class="page-breadcrumb">
+                <li>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+                <li>
+                    <span>Sales Add/Edit Page</span>
+                </li>
+            </ul>
+
+        </div>
+        <!-- END PAGE BAR -->
+        <!-- BEGIN PAGE TITLE-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase">Sales Add/Edit</span>
+                </div>
+                @*<div class="actions">
+                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+
+                <input  type="radio" name="options" class="toggle" id="option1">Country List
+                </label>
+
+                </div>
+                </div>*@
+            </div>
+
+
+            <div class="portlet-body form">
+                <h4 class="font-green-sharp">@TempData["Salesinsert"]</h4>
+                <form class="form-horizontal" role="form" method="post" asp-area="SLS_Sales" asp-controller="SLS_Sales" asp-action="Save">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    @Html.HiddenFor(x=>x.SaleID)
+                    @Html.HiddenFor(x=>x.UsreID)
+                    <div class="form-body">
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>CompanyName</label>
+                            <div class="col-md-9">
+                                <select asp-for="CompanyID" asp-items="@(new SelectList(ViewBag.CompanyList,"CompanyID","CompanyName"))" class="form-control">
+                                    <option value="">Select Company</option>
+                                </select>
+                                <span asp-validation-for="CompanyID" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>CustomerName</label>
+                            <div class="col-md-9">
+                                <select asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.CustomerList,"CustomerID","CustomerName"))" class="form-control">
+                                    <option value="">Select CustomerName</option>
+                                </select>
+                                <span asp-validation-for="CustomerID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>SaleQuantity</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter SaleQuantity" required asp-for="SaleQuantity" class="form-control" />
+                                <span asp-validation-for="SaleQuantity" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>Price</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter Price" required asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label class="col-md-3 control-label"><span class="text-danger">*</span>PaymentStatus</label>
+                            <div class="col-md-9">
+                                <input type="text" placeholder="Enter PaymentStatus" required asp-for="PaymentStatus" class="form-control" />
+                                <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-9">
+                                <input type="submit" class="btn green" value="Save" />
+                                <a class="btn default" asp-area="SLS_Sales" asp-controller="SlS_Sales" asp-action="Index">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    <!-- END CONTENT BODY -->
+</div>
+

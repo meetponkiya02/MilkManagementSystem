@@ -75,7 +75,7 @@ namespace MilkManagementSystem.Areas.COM_Company.Controllers
 
                 if (Convert.ToBoolean(dalCOM.dbo_PR_COM_Company_Insert(modelCOM_Company)))
                 {
-                    TempData["CountryInsertMessage"] = "Record inserted successfully";
+                    TempData["CompanyInsert"] = "Record inserted successfully";
 
                 }
             }
@@ -84,7 +84,7 @@ namespace MilkManagementSystem.Areas.COM_Company.Controllers
                 if (Convert.ToBoolean(dalCOM.dbo_PR_COM_Company_UpdateByPK(modelCOM_Company)))
                 {
 
-                    TempData["CountryUpdateMessage"] = "Record Update Successfully";
+                    TempData["CompanyUpdate"] = "Record Update Successfully";
 
                 }
                 return RedirectToAction("Index");

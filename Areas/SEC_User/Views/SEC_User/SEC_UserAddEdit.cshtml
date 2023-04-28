@@ -44,7 +44,7 @@
 
 
             <div class="portlet-body form">
-                <h4 class="font-green-sharp">@TempData["EventCategoryInsertMsg"]</h4>
+                <h4 class="font-green-sharp">@TempData["UserInsert"]</h4>
                 <form class="form-horizontal" role="form" method="post" asp-area="SEC_User" asp-controller="SEC_User" asp-action="Save">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     @Html.HiddenFor(x=>x.UserID)
